@@ -25,7 +25,7 @@ client.search({
   term: term,
   location: req.params.searchTerm,
   sort_by: "review_count",
-  limit: 3
+  limit: 2
 }).then(response => {
 
     console.log("there are "+response.jsonBody.businesses.length+" hotels")
@@ -85,7 +85,7 @@ client.search({
        
     });
     // give the scrape enough time to populate reviews, wait 3.1 seconds to load the page.
-    setTimeout(function () {res.json(hotelsInfo);  },3100)
+    setTimeout(function () {res.json(hotelsInfo);  },6000)
     
 }).catch(e => {
   console.log(e);
@@ -93,7 +93,7 @@ client.search({
 
 });
  
-// module.exports = yelpRoutes;
+module.exports = yelpRoutes;
 
   
                 // // IBM watson calls for natural language understanding
